@@ -1,16 +1,16 @@
 {
-  "name": "apidoc-example",
+  "name": "5i 课堂",
   "version": "0.3.0",
-  "description": "apidoc example project",
+  "description": "5i 课堂 apidoc example project",
   "title": "Custom apiDoc browser title",
-  "url" : "https://api.github.com/v1",
-  "sampleUrl": "https://api.github.com/v1",
+  "url" : "http://demo.bw-xt.com/mapi_v1",
+  "sampleUrl" : "http://demo.bw-xt.com/mapi_v1",
   "header": {
-    "title": "My own header title",
+    "title": "API 接口简介",
     "filename": "header.md"
   },
   "footer": {
-    "title": "My own footer title",
+    "title": "API 接口附录",
     "filename": "footer.md"
   },
   "template": {
