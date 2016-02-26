@@ -123,6 +123,33 @@
 
   @apiParam {String} token  登录用户的TOKEN.
   @apiParam {String} mobileNo    11位手机号码.
+  @apiParam {String} appType    app 类型.
+  @apiParam {String} channelId    channel来源.
+
+  @apiSuccess  {number} code         错误码信息 非0位失败
+  @apiSuccess  {String} describe       code对应描述
+  @apiSuccess  {json} data       业务数据
+
+  @apiSuccess  {String} data.mtoken         32位UUID.
+  @apiSuccess  {json} data.imgUrl         图形验证码的url, 加上?mtoken=<上述mtoken>即可生成检验码图片，每调用一次都将将生成一个新的图形.
+  @apiSuccess  {json} data.checkUrl       类似imgUrl， 传入mtoken和vcode参数，可以检查用户图形校验码输入是否正确.
+
+*/
+
+
+
+/**
+@api {get} user/smscode/login  短信验证码登录
+@apiVersion 0.3.0
+@apiName user/smscode/login
+@apiGroup Register
+@apiDescription 短信验证码登录
+
+
+  @apiParam {String} mtoken  手机绑定的mtoken.
+  @apiParam {String} code    短信验证码.
+  @apiParam {String} mobileNo    手机号码.
+  @apiParam {String} channelId    channel来源.
 
   @apiSuccess  {number} code         错误码信息 非0位失败
   @apiSuccess  {String} describe       code对应描述
@@ -165,9 +192,20 @@
   @apiParam {String} mtoken  短信码码MTOKEN.
   @apiParam {String} mobileNo      11位手机号码.
 
-  @apiSuccess  {number} code         错误码信息 非0为失败
-  @apiSuccess  {String} describe       code对应描述
-  @apiSuccess  {json} data       业务数据
+ * @apiSuccess  {String} data.token         32位UUID.
+ * @apiSuccess  {json} data.user         user对象.
+ * @apiSuccess {number} data.user.id         用户ID.
+ * @apiSuccess {String} data.user.nickname        用户昵称.
+ * @apiSuccess {String} data.user.title         头衔.
+ * @apiSuccess {String} data.user.email        用户邮箱.
+ * @apiSuccess {String} data.user.mobileNO         绑定的移动号码.
+ * @apiSuccess {String} data.user.avatar         头像链接.
+ * @apiSuccess {String} data.user.truename         真实姓名.
+ * @apiSuccess {String} data.user.signature         签名.
+ * @apiSuccess {String} data.user.about         介绍.
+ * @apiSuccess {String} data.user.company         公司.
+ * @apiSuccess {String} data.user.city         城市.
+ * @apiSuccess {String} data.user.mobile         手机联系方式.
 
 
 */
