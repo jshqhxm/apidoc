@@ -13,6 +13,10 @@
     "title": "API 接口附录",
     "filename": "footer.md"
   },
+  "order": [
+    "Reg",
+    "Login"
+  ],
   "template": {
   	"withCompare": true,
   	"withGenerator": true

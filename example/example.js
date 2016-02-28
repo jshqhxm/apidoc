@@ -1,8 +1,8 @@
 
 /**
- * @api {get} /user_login_with_email Login wiht email
+ * @api {get} /user_login_with_email Login with email
  * @apiVersion 0.3.0
- * @apiName login
+ * @apiName Login
  * @apiGroup Login
  * @apiPermission none
  *
@@ -117,7 +117,7 @@
 @api {get} /user_mobile_smscode_token  获取短信码TOKEN
 @apiVersion 0.3.0
 @apiName user_mobile_smscode_token
-@apiGroup Register
+@apiGroup Reg
 @apiDescription 用户手机号码注册时需要输入短信验证码，首先必须获得一个令牌。通过该该令牌识别用户操作的有效性
 
 
@@ -142,7 +142,7 @@
 @api {get} user/smscode/login  短信验证码登录
 @apiVersion 0.3.0
 @apiName user/smscode/login
-@apiGroup Register
+@apiGroup Reg
 @apiDescription 短信验证码登录
 
 
@@ -166,7 +166,7 @@
 @api {get} /user_mobile_bind_token  关联手机到MTOKEN
 @apiVersion 0.3.0
 @apiName user_mobile_bind_token
-@apiGroup Register
+@apiGroup Reg
 @apiDescription 用户手机号码注册时获得MTOKEN之后，用户输入手机号码，需要做一次绑定，以便MTOKEN作为代表移动号码完成后续的操作。
 
 
@@ -184,7 +184,7 @@
 @api {get} /user_mobile_smscode  重发或校验短信验证码
 @apiVersion 0.3.0
 @apiName user_mobile_smscode
-@apiGroup Register
+@apiGroup Reg
 @apiDescription 发送短信验证码之后，由于网络或者其他原因，用户可能没能及时收到短信，这个时候需要重新发送短信码。一个号码一天只能发送10次。
 用户输入校验码码之后，可以调用该该接口进行校验
 
@@ -215,7 +215,7 @@
 @api {get} /user_register   用户注册
 @apiVersion 0.3.0
 @apiName user_register
-@apiGroup Register
+@apiGroup Reg
 @apiDescription 用户输入邮箱或者手机号码进行注册。 注册之后即是注册用户
 
   @apiParam {String} email  邮箱（长度：4-200）
@@ -252,7 +252,7 @@
 @api {get} /user_login_with_email   用户登录
 @apiVersion 0.3.0
 @apiName user_login_with_email
-@apiGroup Register
+@apiGroup Login
 @apiDescription 用户输入邮箱或者手机号码登录系统。
 
   @apiParam {String} email  邮箱（长度：4-200）
@@ -289,7 +289,7 @@
 @api {get} /user_snslogin_callback   第三方登录回调
 @apiVersion 0.3.0
 @apiName user_snslogin_callback
-@apiGroup Register
+@apiGroup Login
 @apiDescription 用户通过QQ或者其他帐号在移动端登录
 
   @apiParam {String} type       登录类型'qq'| 'renren' | 'weibo'
@@ -331,7 +331,7 @@
 @api {get} /user_email_bind   邮箱绑定
 @apiVersion 0.3.0
 @apiName user_email_bind
-@apiGroup Register
+@apiGroup Setting
 @apiDescription 用户移动号码注册或者第三方登录之后，可能将帐号绑定到邮箱，以后就可以通过邮箱登录。
 
 
@@ -357,7 +357,7 @@
 @api {get} /user_mobile_bind   手机号码绑定
 @apiVersion 0.3.0
 @apiName user_mobile_bind
-@apiGroup Register
+@apiGroup Setting
 @apiDescription 用户邮箱注册或者第三方登录之后，可能将帐号绑定到手机号码，后续就可以通过手机号码登录。
 
 
