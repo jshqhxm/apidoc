@@ -1348,4 +1348,93 @@
 */
 
 
+/**
+ * @api {get} /activity/status  活动状态
+ * @apiVersion 0.3.0
+ * @apiName activity/status 
+ * @apiGroup my
+ * 
+ * @apiDescription 获取活动状态
+ * 
+ * @apiParam {String} token  用户token，唯一标识
+ * @apiParam {String} quotas  缓存播放次数
+ * 
+ * @apiSuccess  {bool} success 0减少失败,1成功减少
+ * @apiSuccess  {int} courseQ  剩余配额数
+ * @apiSuccess  {int} lessonQ  课时剩余配额数
+ * 
+*/
 
+
+/**
+ * @api {get} /activity/course/measure/record  活动状态记录
+ * @apiVersion 0.3.0
+ * @apiName activity/course/measure/record
+ * @apiGroup my
+ * 
+ * @apiDescription 获取活动状态
+ * 
+ * @apiParam {String} token  用户token，唯一标识
+ * 
+ * @apiSuccess  {bool} success 0减少失败,1成功减少
+ * @apiSuccess  {int} courseQ  剩余配额数
+ * @apiSuccess  {int} lessonQ  课时剩余配额数
+ * 
+*/
+
+
+/**
+ * @api {get} /activity/enroll/online  活动报名
+ * @apiVersion 0.3.0
+ * @apiName activity/course/measure/record
+ * @apiGroup my
+ * 
+ * @apiDescription 活动报名
+ * 
+ * @apiParam {String} token  用户token，唯一标识
+ * 
+ * @apiSuccess  {bool} success 0减少失败,1成功减少
+ * @apiSuccess  {int} courseQ  剩余配额数
+ * @apiSuccess  {int} lessonQ  课时剩余配额数
+ * 
+*/
+
+
+/**
+ * @api {get} /article/list  资讯列表
+ * @apiVersion 0.3.0
+ * @apiName activity/course/measure/record
+ * @apiGroup my
+ * 
+ * @apiDescription 资讯列表
+ * 
+ * @apiParam {String} token  用户token，唯一标识
+ * 
+ * @apiSuccess  {bool} success 0减少失败,1成功减少
+ * @apiSuccess  {int} courseQ  剩余配额数
+ * @apiSuccess  {int} lessonQ  课时剩余配额数
+ * 
+*/
+
+/**
+ * @api {get} /course/test/do  试卷详情 
+ * @apiVersion 0.3.0
+ * @apiName course/test/do 
+ * @apiGroup my
+ * 
+ * @apiDescription 资讯列表
+ * 
+ * @apiParam {String} token  用户token，唯一标识
+ * 
+ * @apiSuccess  {bool} success 0减少失败,1成功减少
+ * @apiSuccess  {int} courseQ  剩余配额数
+ * @apiSuccess  {int} lessonQ  课时剩余配额数
+ * 
+*/
+
+
+//categoryQuestion/list   获取试卷种类
+//questionCategory/list  按照种类获取试卷
+//activity/enroll/online
+//question/favorite     收藏试卷
+//course/test/submit   试卷提交

@@ -77,7 +77,7 @@
  * @apiGroup course
  * @apiPermission non
  *
- * @apiDescription courseId不能为空（课程编码）
+ * @apiDescription 获取课程内容简介，返回课程基本信息，courseId不能为空（课程编码）
  * 
  * @apiParam {int} courseId  
  *
@@ -96,7 +96,7 @@
  * @apiGroup course
  * @apiPermission non
   *
- * @apiDescription courseId不能为空（课程编码）
+ * @apiDescription 获取课程对应的章节信息 
  * 
  * @apiParam {int} courseId  
  * @apiParam {String} token
@@ -122,13 +122,13 @@
 
 /**
  * 
- * @api {get} /course_note_list  课程笔记
+ * @api {get} /course_note_list  课程笔记列表
  * @apiVersion 0.3.0
  * @apiName user_course_join
  * @apiGroup course
  * @apiPermission non
   *
- * @apiDescription courseId不能为空（课程编码）
+ * @apiDescription 获取课程标记列表 courseId不能为空（课程编码）
  * 
  * @apiParam {int} courseId 课程ID  
  * @apiParam {String} token 登录token
@@ -179,7 +179,7 @@
  * @apiGroup course
  * @apiPermission non
   *
- * @apiDescription  输入都可以为空
+ * @apiDescription  获取课程评价
  * 
  * @apiParam {int} courseId 课程ID  
  * @apiParam {String} token 登录token
