@@ -1,7 +1,7 @@
 {
   "name": "5i 课堂",
   "version": "0.3.0",
-  "description": "5i 课堂 apidoc example project",
+  "description": "5i 课堂 API接口说明",
   "title": "Custom apiDoc browser title",
   "url" : "http://demo.bw-xt.com/mapi_v1",
   "sampleUrl" : "http://demo.bw-xt.com/mapi_v1",
@@ -14,8 +14,10 @@
     "filename": "footer.md"
   },
   "order": [
-    "Reg",
-    "Login"
+    "config",
+    "account",
+    "course",
+    "order"
   ],
   "template": {
   	"withCompare": true,

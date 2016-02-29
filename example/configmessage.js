@@ -1,11 +1,11 @@
 /**
- * @api {get} /site/config/info   siteinfo
+ * @api {get} /site/config/info  获取站点配置
  * @apiVersion 0.3.0
  * @apiName config
- * @apiGroup Config
+ * @apiGroup config
  * @apiPermission none
  *
- * @apiDescription 获取配置
+ * @apiDescription 获取本站点配置
  *
  * @apiSuccess  {String} about         app简介.
  * @apiSuccess  {number} anonymous     是否支持游客 0不支持，1支持.
@@ -27,7 +27,7 @@
  *
  *
  * @apiSuccessExample Success-Response:
- *     HTTP/1.1 200 OK
+ * HTTP/1.1 200 OK
  * {
  *  about = "fdsfdsdfs"
  *  anonymous = 1;
@@ -51,23 +51,56 @@
  * }
  */
 
-function getConfig(){
-    return;
+/**
+  @api {get} /app_version_check   app版本检测
+  @apiVersion 0.3.0
+  @apiName app_version_check
+  @apiGroup config
+
+  @apiDescription app版本检测接口 后台会根据http请求中带的useragent的类型来判断检测的是Android版本还是ios版本
+
+
+@apiSuccessExample Success-Response:
+  HTTP/1.1 200 OK
+ {
+    "pkgName": "com.demo.needs.app",
+    "versionName": "3.2.9",
+    "versionCode": "281",
+    "plist": [],
+    "versionDesc": null,
+    "url": "http://demo.bw-xt.com/mobile/download",
+    "downloadUrl": "http://demo.bw-xt.com/mobile/666/download/5iKetang-eNeeds-v3.2.9.apk",
+    "appName": "5i课堂",
+    "siteName": "5i课堂",
+    "menus": {
+        "1": "http://www.baidu.com",
+        "teacher": "/teachers",
+        "dddd": "/article",
+        "code1": "teachers",
+        "support": "#",
+        "aboutus": "page/about"
+    },
+    "mgatehost": "proxy.5iketang.com:3014",
+    "about": "<p>\r\n\t深圳博为讯通技术有限公司成立于2013年，公司专注于教育培训的技术与产品研发、运营与服务，主要客户为职业教育培训机构、职业教育学校（中高职）、企业培训部门等。\r\n</p>\r\n<p>\r\n\t&nbsp;<img src=\"/files/default/2015/10-23/094446e5e29e520860/vi-vim-cheat-sheet.png?2301.live1x629\" alt=\"\" /> \r\n</p>\r\n<p>\r\n\t<strong>公司愿景：打造中国领先的在线课堂O2O平台运营与服务提供商;</strong> \r\n</p>\r\n<p>\r\n\t<strong>公司核心价值观：激情、创新、艰苦奋斗、团队协作;</strong> \r\n</p>\r\n<p>\r\n\t<strong>公司使命：提供“人人皆学、处处能学、时时可学”的机会。</strong> \r\n</p>\r\n<p>\r\n\t&nbsp;\r\n</p>\r\n<p>\r\n\t公司主营产品为5i课堂，运用“互联网+”技术手段对传统教育培训进行转型，采用是线上与线下融合的业务模式，为教育培训客户打造“互动教学”与“移动学\r\n习”的O2O在线课堂平台，让在线教育变得很简单。凭借国内领先的平台技术和最佳的用户体验的实力，公司已为中财华路商学院、广州致知、新励成、广东清华\r\n等十多个教育培训客户提供服务。\r\n</p>\r\n<p>\r\n\t&nbsp;\r\n</p>\r\n<p>\r\n\t公司总部设在深圳，在南京设立产品研发中心，并在广州、南宁等地设立分支机构。 \r\n公司创始人主要来自前华为人，分别来自研发、销售和营销等领域，在华为超过10年以上工作经验，具有很强的团队协作和执行落地的精神。公司的运营总监等来\r\n自教育培训行业和互联网行业，具有丰富的运营和推广经验。\r\n</p>\r\n<p>\r\n\t&nbsp;\r\n</p>\r\n<p>\r\n\t未来1~3年，是公司快速发展的时期，公司将坚持聚焦5i课堂这个O2O教育的创新领域，并邀请和吸引更多优秀人才加盟进来，持续创新、提升服务，持续打造中国领先的在线课堂O2O平台运营与服务提供商。\r\n</p>\r\n<br />",
+    "logo": "http://demo.bw-xt.com/files/system/mobis-1439292036.png"
 }
+
+*/
+
 
 
 /**
- * @api {get} /site/profile   siteprofile
+ * @api {get} /site/profile   站点第三方配置获取
  * @apiVersion 0.3.0
  * @apiName Config
- * @apiGroup Config
+ * @apiGroup config
  * @apiPermission none
  *
- * @apiDescription 获取第三方库连接需要的参数
+ * @apiDescription 获取第三方库（保利、叁体、融云）连接需要的参数，重要接口，返回的内容是加密的，内容只有data 字段一个内容 具体内容需要base64解密
  *
  * @apiParam {String} key    随机字符串str.
  * @apiParam {String} token  用户token.
- * @apiParam {String} sign   随机字符串str,经base64(base64(str))得到的字符串.
+ * @apiParam {String} sign   随机字符串str,经md5(md5(str))得到的字符串.
  *
  * @apiSuccess  {String} downloadId         保利下载ID.
  * @apiSuccess  {String} downloadSecretkey     保利下载秘钥.
@@ -117,13 +150,13 @@ function getProfile(){
 
 
 /**
- * @api {get} /ims/user/online    useronline
+ * @api {get} /ims/user/online    通知portal上线
  * @apiVersion 0.3.0
  * @apiName online
  * @apiGroup Message
  * @apiPermission none
  *
- * @apiDescription 通知im上线
+ * @apiDescription 通知portal用户上线，后台用以触发上线通知
  *
  * @apiParam {number} lessonId    课时id.
  * @apiParam {String} token  用户token.
@@ -142,13 +175,13 @@ function online(){
 }
 
 /**
- * @api {get} /ims/user/offline   useroffline
+ * @api {get} /ims/user/offline   通知portal下线
  * @apiVersion 0.3.0
  * @apiName offline
  * @apiGroup Message
  * @apiPermission none
  *
- * @apiDescription 通知im下线
+ * @apiDescription 通知portal用户已经下线
  *
  * @apiParam {number} lessonId    课时id.
  * @apiParam {String} token  用户token.
@@ -168,13 +201,13 @@ function offline(){
 
 
 /**
- * @api {get} /ims/user/send/message    message
+ * @api {get} /ims/user/send/message    通知portal通用接口
  * @apiVersion 0.3.0
  * @apiName sendMessage
  * @apiGroup Message
  * @apiPermission none
  *
- * @apiDescription 发送im消息
+ * @apiDescription 原有通过叁体的控制信息，通过该接口通知到portal，portal再通过IM通道广播出去
  *
  * @apiParam {number} lessonId    课时id.
  * @apiParam {number} node_id     node.
@@ -195,7 +228,7 @@ function imUserSendMessage(){
 }
 
 /**
- * @api {get} /ims/user/get/token   imtoken
+ * @api {get} /ims/user/get/token   获取融云初始化参数
  * @apiVersion 0.3.0
  * @apiName getImToken
  * @apiGroup Message
@@ -207,7 +240,14 @@ function imUserSendMessage(){
  * @apiParam {String} token       用户token.
  *
  *
- * @apiSuccess  {String} result    成功返回OK.
+ * @apiSuccess  {String} im_userId    用户在portal上唯一标示.
+ * @apiSuccess  {String} im_token    融云平台上的token.
+ * @apiSuccess  {String} im_appKey    融云平台上app对应的appKey.
+ * @apiSuccess  {String} im_roomId    聊天室roomId.
+ * @apiSuccess  {String} im_userName    用户昵称.
+ * @apiSuccess  {String} im_portraitUri    用户头像地址.
+
+
  * @apiSuccessExample Success-Response:
  *     HTTP/1.1 200 OK
  * {
