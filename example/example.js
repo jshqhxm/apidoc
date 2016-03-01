@@ -1372,13 +1372,15 @@
  * @apiName activity/course/measure/record
  * @apiGroup my
  * 
- * @apiDescription 获取活动状态
+ * @apiDescription 记录活动状态，如投票、报名等
  * 
  * @apiParam {String} token  用户token，唯一标识
+  * @apiParam {String} activityCode  活动码标示
+  * @apiParam {String} courseId  课程ID
+ * @apiParam {String} measure  用户token，唯一标识
+
  * 
  * @apiSuccess  {bool} success 0减少失败,1成功减少
- * @apiSuccess  {int} courseQ  剩余配额数
- * @apiSuccess  {int} lessonQ  课时剩余配额数
  * 
 */
 
@@ -1386,7 +1388,7 @@
 /**
  * @api {get} /activity/enroll/online  活动报名
  * @apiVersion 0.3.0
- * @apiName activity/course/measure/record
+ * @apiName activity/enroll/online
  * @apiGroup my
  * 
  * @apiDescription 活动报名
@@ -1403,12 +1405,14 @@
 /**
  * @api {get} /article/list  资讯列表
  * @apiVersion 0.3.0
- * @apiName activity/course/measure/record
+ * @apiName article/list
  * @apiGroup my
  * 
  * @apiDescription 资讯列表
  * 
  * @apiParam {String} token  用户token，唯一标识
+
+
  * 
  * @apiSuccess  {bool} success 0减少失败,1成功减少
  * @apiSuccess  {int} courseQ  剩余配额数
@@ -1433,8 +1437,63 @@
 */
 
 
-//categoryQuestion/list   获取试卷种类
-//questionCategory/list  按照种类获取试卷
-//activity/enroll/online
-//question/favorite     收藏试卷
-//course/test/submit   试卷提交
+
+/** 
+ @api {get} /categoryQuestion/list  获取试卷种类 
+ @apiVersion 0.3.0
+ @apiName categoryQuestion/list 
+ @apiGroup my
+ 
+ @apiDescription 资讯列表
+ 
+ @apiParam {String} token  用户token，唯一标识
+ 
+ @apiSuccess  {bool} success 0减少失败,1成功减少
+ 
+*/
+
+
+/** 
+ @api {get} /questionCategory/list 按照种类获取试卷 
+ @apiVersion 0.3.0
+ @apiName questionCategory/list
+ @apiGroup my
+ 
+ @apiDescription 资讯列表
+ 
+ @apiParam {String} token  用户token，唯一标识
+ 
+ @apiSuccess  {bool} success 0减少失败,1成功减少
+ 
+*/
+
+
+/** 
+ @api {get} /question/favorite 收藏试卷接口 
+ @apiVersion 0.3.0
+ @apiName question/favorite
+ @apiGroup my
+ 
+ @apiDescription 收藏或取消收藏试题接口
+ 
+ @apiParam {String} token  用户token，唯一标识
+ 
+ @apiSuccess  {bool} success 0减少失败,1成功减少
+ 
+*/
+
+/** 
+ @api {get} /course/test/submit  试卷提交 
+ @apiVersion 0.3.0
+ @apiName question/favorite
+ @apiGroup my
+ 
+ @apiDescription 试卷提交接口
+ 
+ @apiParam {String} token  用户token，唯一标识
+ 
+ @apiSuccess  {bool} success 0减少失败,1成功减少
+ 
+*/
+
+

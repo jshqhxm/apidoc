@@ -559,7 +559,11 @@
         }
     ]
 }
-
+ @apiErrorExample {json} Error-Response:
+ HTTP/1.1 404 Not Found
+ {
+  "error": "UserNotFound"
+  }
 
  */
 
@@ -576,7 +580,90 @@
    @apiParam {String} courseId  课程对应Id
 
  * 
-
-
  * 
 */
+
+/** 
+ @api {get} /courses/package/list  课程包列表 
+ @apiVersion 0.3.0
+ @apiName courses/package/list 
+ @apiGroup course
+ 
+ @apiDescription 课程包查询接口
+ 
+ @apiParam {String} token  用户token，唯一标识
+ 
+ @apiSuccess  {bool} success 0减少失败,1成功减少
+ 
+*/
+
+
+
+/** 
+ @api {get} /get/courses/package  课程包详情
+ @apiVersion 0.3.0
+ @apiName get/courses/package 
+ @apiGroup course
+ 
+ @apiDescription 课程包查询接口
+ 
+ @apiParam {String} token  用户token，唯一标识
+ @apiParam {String} gradeId  课程包Id
+
+ 
+ @apiSuccess  {bool} success 0减少失败,1成功减少
+ 
+*/
+
+/** 
+ @api {get} /my/course/package/list  我的课程包
+ @apiVersion 0.3.0
+ @apiName my/course/package/list 
+ @apiGroup course
+ 
+ @apiDescription 课程包查询接口
+ 
+ @apiParam {String} token  用户token，唯一标识
+ 
+ @apiSuccess  {bool} success 0减少失败,1成功减少
+ 
+*/
+
+/** 
+ @api {get} /user_grade_join  购买课程包
+ @apiVersion 0.3.0
+ @apiName user_grade_join 
+ @apiGroup course
+ 
+ @apiDescription 加入课程包
+ 
+ @apiParam {String} token  用户token，唯一标识
+ 
+ @apiSuccess  {bool} success 0减少失败,1成功减少
+ 
+*/
+
+
+
+/** 
+ @api {get} /course_student_study_apply  在线报名，收集报名用户接口
+ @apiVersion 0.3.0
+ @apiName course_student_study_apply 
+ @apiGroup course
+ 
+ @apiDescription 在线报名接口
+ 
+ @apiParam {String} token  用户token，唯一标识
+ @apiParam {String} courseId  课程Id
+ @apiParam {String} showName  姓名
+ @apiParam {String} idcard  身份证号码
+ @apiParam {String} mobileNo  手机号码
+ @apiParam {String} email  邮箱
+
+
+ 
+ @apiSuccess  {bool} success 0减少失败,1成功减少
+ 
+*/
+
+

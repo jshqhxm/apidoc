@@ -60,6 +60,11 @@
   @apiDescription app版本检测接口 后台会根据http请求中带的useragent的类型来判断检测的是Android版本还是ios版本
 
 
+@apiHeaderExample {json} Header-Example:
+{
+  "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 8_0 like Mac OS X) AppleWebKit/600.1.3 (KHTML, like Gecko) Version/8.0 Mobile/12A4345d Safari/600.1.4"
+}
+
 @apiSuccessExample Success-Response:
   HTTP/1.1 200 OK
  {
